@@ -1,11 +1,11 @@
 import os
 
 OutputFileName = input("What would you like the file name to be?   ")
-HasGivenQuestionNumber = False
-while HasGivenQuestionNumber == False:
+GivenNumber = False
+while GivenNumber == False:
     TotalQuestions = input("How many questions do you want to make?  ")
     if TotalQuestions.isnumeric() == True:
-        HasGivenQuestionNumber = True
+        GivenNumber = True
         break
     else:
         print("Please input a number\n")
@@ -13,8 +13,7 @@ while HasGivenQuestionNumber == False:
 x = 0
 
 outfile = open(OutputFileName+'.txt', 'x')
-outfile.write('score = 0' + '\n')
-outfile.write('total = '+ TotalQuestions + '\n')
+outfile.write('score = 0' + '\n'+'total =' + TotalQuestions + '\n')
 outfile.close()
 
 while x < int(TotalQuestions):
@@ -41,4 +40,5 @@ outfile = open(OutputFileName+'.txt', 'a')
 outfile.write('print("you scored ",score," out of ",total)' + '\n')
 outfile.close()
 os.rename(OutputFileName+'.txt',OutputFileName+'.py')
+print("Written better than last time")
 print(" Made by https://github.com/Auxy6858 ")
